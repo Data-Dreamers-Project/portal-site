@@ -7,7 +7,6 @@ import { GhostButton } from "~/components/atoms/Button";
 import DocsWell from "~/components/features/DocsWell";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
-import HeroImageSrc from "../../public/images/challenge-lab-01.png";
 
 export const metadata: Metadata = {
 	title: "Data Dreamers",
@@ -18,14 +17,14 @@ export const metadata: Metadata = {
 		siteName: "Data Dreamers Official Website",
 		images: [
 			{
-				url: "https://data-dreamers.vercel.app/images/challenge-lab-01.png",
+				url: "https://data-dreamers.vercel.app/images/challenge-lab-01.webp",
 			},
 		],
 	},
 };
 
 const imageData: ImageProps = {
-	src: HeroImageSrc,
+	src: "/images/challenge-lab-01.webp",
 	alt: "Data Dreamers",
 	priority: true,
 	placeholder: "blur",

@@ -5,7 +5,7 @@ import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
 
 const imageData = {
-	src: "/images/challenge-lab-02.png",
+	src: "/images/challenge-lab-02.webp",
 	alt: "Data Dreamers",
 	priority: true,
 };
@@ -144,11 +144,12 @@ export default function Home() {
 						活動場所
 					</Heading>
 					<Text p="1em">
-						Challenge Lab 2F
-						<br />
 						夢考房2F Data Dreamers フロア
 						<br />
-						その他、教室を借りて行います
+						その他、教室を借りて行います。
+						<br />
+						※活動場所はDiscordでお知らせしています。
+						見学・参加希望の方は、事前にメールでお知らせください。
 						<br />
 					</Text>
 				</Grid>

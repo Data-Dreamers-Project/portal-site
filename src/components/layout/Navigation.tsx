@@ -12,10 +12,10 @@ const List = [
 		title: "New Students",
 		href: "/for-new-dreamers",
 	},
-	{
-		title: "Blog",
-		href: "/blog",
-	},
+	// {
+	// 	title: "Blog",
+	// 	href: "/blog",
+	// },
 	{
 		title: "Contact",
 		href: "/contact",

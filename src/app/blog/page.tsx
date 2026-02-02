@@ -15,6 +15,7 @@ import {
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { CategorySelector } from "~/components/features/CategorySelector";
 import { SearchInput } from "~/components/features/SearchInput";
 import Section from "~/components/layout/Section";
@@ -32,6 +33,8 @@ interface BlogListPageProps {
 }
 
 const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
+	return notFound();
+	// ブログの運用が始まるまで一旦notFound
 	const searchWord = searchParams.q || ""; // URLクエリから検索ワードを取得
 	const selectedCategory = searchParams.category || ""; // URLクエリからカテゴリを取得
 

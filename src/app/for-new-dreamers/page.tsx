@@ -9,10 +9,9 @@ import {
 } from "@yamada-ui/react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import React from "react";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
-import { EVENTS } from "~/constants/events";
+import { Schedule } from "~/components/schedule/Schedule";
 
 export const metadata: Metadata = {
 	title: "新入生の方へ",
@@ -81,19 +80,11 @@ export default function Home() {
 				<Heading as="h2" size={"lg"} id="schedule">
 					スケジュール
 				</Heading>
-
 				<Heading as="h3" size={"md"}>
 					課外活動紹介イベント
 				</Heading>
-				<Grid templateColumns="1fr 2fr 1fr" gap={4}>
-					{EVENTS.map((event) => (
-						<>
-							<Text key={event.date}>{event.date}</Text>
-							<Text key={event.title}>{event.title}</Text>
-							<Text key={event.location}>{event.location}</Text>
-						</>
-					))}
-				</Grid>
+				<Text>※未定の項目については、詳細が決定次第、順次反映いたします。</Text>
+				<Schedule />
 
 				<Heading as="h3" size={"md"}>
 					活動の流れ

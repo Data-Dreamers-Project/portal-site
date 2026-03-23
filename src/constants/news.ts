@@ -6,6 +6,24 @@ type Content = {
 
 export const NEWS: Content[] = [
 	{
+		date: "2025/8/19",
+		title:
+			"【高校生がAI活用と地方創生データ分析】Data Dreamersと狩野研究室が実践的な特別講座。埼玉県の昌平高等学校で",
+		link: "https://www.kanazawa-it.ac.jp/kitnews/2025/0819_kano.html",
+	},
+	{
+		date: "2025/4/21",
+		title:
+			"【Data Dreamersが金融データ活用推進協会（FDUA）賞 学生部門３位】金融業界最大のデータ分析コンペティション「（金融庁共催）第３回金融データ活用チャレンジ」で",
+		link: "https://www.kanazawa-it.ac.jp/kitnews/2025/0421_DataDreamers.html",
+	},
+	{
+		date: "2025/1/16",
+		title:
+			"【国内外のデータ分析コンペで快進撃！】データサイエンスに関する課外プロジェクト Data Dreamers　2024年活動報告",
+		link: "https://www.kanazawa-it.ac.jp/kitnews/2025/0116_data-dreamers.html",
+	},
+	{
 		date: "2024/3/8",
 		title:
 			"データサイエンティスト育成団体が設立1年目で大学生向けハッカソン優勝の秘訣をお伺いしました",

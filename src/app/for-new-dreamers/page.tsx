@@ -9,7 +9,6 @@ import {
 } from "@yamada-ui/react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import React from "react";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
 import { EVENTS } from "~/constants/events";

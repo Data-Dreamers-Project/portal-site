@@ -1,6 +1,5 @@
 import { Flex, Motion, Text } from "@yamada-ui/react";
 import Link from "next/link";
-import React from "react";
 import SideMenu from "./SideMenu";
 
 const List = [

@@ -41,7 +41,7 @@ export default function Home() {
 					<br />
 					正式名称は{" "}
 					<strong>
-						金沢工業大学 夢考房 データサイエンスプロジェクト Data Dreamers{" "}
+						金沢工業大学 夢考房 AI・データサイエンスプロジェクト Data Dreamers{" "}
 					</strong>
 					です。
 					<br />
@@ -83,7 +83,7 @@ export default function Home() {
 						/>
 					</Flex>
 					<Text pl="1em">
-						グループに分かれて Signate・Kaggle
+						グループに分かれて SIGNATE・Kaggle
 						などのコンペティションへ参加しています。
 						{/* <br />
 						詳細はグループでの活動内容をご覧ください。 */}
@@ -133,7 +133,7 @@ export default function Home() {
 						活動時間
 					</Heading>
 					<Box p="1em">
-						<Text>コアタイム: 毎週月曜日 17:00 ~ 19:00</Text>
+						<Text>コアタイム: 毎週月曜日・木曜日 17:00 ~ 19:00</Text>
 						<Text fontSize={"smaller"} color={"gray.600"}>
 							※コアタイムは対面で集まって活動する時間です。コアタイム以外でも活動を行うチームがあります。
 						</Text>
@@ -144,9 +144,7 @@ export default function Home() {
 						活動場所
 					</Heading>
 					<Text p="1em">
-						夢考房2F Data Dreamers フロア
-						<br />
-						その他、教室を借りて行います。
+						教室を借りて行います。
 						<br />
 						※活動場所はDiscordでお知らせしています。
 						見学・参加希望の方は、事前にメールでお知らせください。

@@ -3,8 +3,8 @@ import {
 	Card,
 	CardBody,
 	CardHeader,
-	HStack,
 	Heading,
+	HStack,
 	Loading,
 	SimpleGrid,
 	Spacer,
@@ -15,7 +15,6 @@ import {
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { CategorySelector } from "~/components/features/CategorySelector";
 import { SearchInput } from "~/components/features/SearchInput";
 import Section from "~/components/layout/Section";
@@ -33,18 +32,14 @@ interface BlogListPageProps {
 }
 
 const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
-	return notFound();
-	// ブログの運用が始まるまで一旦notFound
-	const searchWord = searchParams.q || ""; // URLクエリから検索ワードを取得
-	const selectedCategory = searchParams.category || ""; // URLクエリからカテゴリを取得
+	const searchWord = searchParams.q || "";
+	const selectedCategory = searchParams.category || "";
 
-	// microCMS APIにクエリパラメータを直接送信
 	const data = await client.get<Blog>({
 		endpoint: "blogs",
 		queries: {
 			filters: [
 				searchWord ? `title[contains]${searchWord}` : undefined,
-				// selectedCategory ? `categories[equals]${selectedCategory}` : undefined,
 				selectedCategory
 					? `categories[contains]${selectedCategory}`
 					: undefined,
@@ -54,7 +49,6 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 		},
 	});
 
-	// カテゴリのデータ取得
 	const categoriesData = await client.getList<Category>({
 		endpoint: "categories",
 	});
@@ -62,6 +56,8 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 	if (!data || !categoriesData) {
 		return <Loading variant="circles" />;
 	}
+
+	const isEmpty = data.contents.length === 0;
 
 	return (
 		<VStack>
@@ -80,42 +76,59 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 				<Heading as="h1" size="2xl">
 					記事一覧
 				</Heading>
-				<SimpleGrid w="full" columns={{ base: 3, sm: 1 }} gap={4}>
-					{data.contents.map((blog) => (
-						<Link href={`blog/${blog.id}`} key={blog.id}>
-							<Card>
-								<Box
-									position="relative"
-									width="100%"
-									height="150px"
-									bgGradient={"white"}
-								>
-									<Image
-										src={blog.eyecatch?.url ?? RandomDummyImage()}
-										alt={blog.title}
-										fill
-										style={{ objectFit: "contain" }}
-									/>
-								</Box>
-								<CardHeader minH={"16"} alignItems={"start"}>
-									<Heading as={"h3"} size={"sm"} lineClamp={2}>
-										{blog.title}
-									</Heading>
-								</CardHeader>
-								<CardBody>
-									<HStack>
-										{blog.categories?.map((category) => (
-											<Tag key={category.id} size="sm">
-												{category.name}
-											</Tag>
-										))}
-									</HStack>
-									<Text>{dayjs(blog.publishedAt).format("YYYY/MM/DD")}</Text>
-								</CardBody>
-							</Card>
-						</Link>
-					))}
-				</SimpleGrid>
+				{isEmpty ? (
+					<Box
+						w="full"
+						borderWidth="1px"
+						borderColor="gray.200"
+						rounded="md"
+						py={12}
+						px={6}
+						textAlign="center"
+					>
+						<Text as="b">該当する記事が見つかりませんでした。</Text>
+						<Text color="gray.600" mt={2}>
+							検索条件を変更して、もう一度お試しください。
+						</Text>
+					</Box>
+				) : (
+					<SimpleGrid w="full" columns={{ base: 3, sm: 1 }} gap={4}>
+						{data.contents.map((blog) => (
+							<Link href={`blog/${blog.id}`} key={blog.id}>
+								<Card>
+									<Box
+										position="relative"
+										width="100%"
+										height="150px"
+										bgGradient={"white"}
+									>
+										<Image
+											src={blog.eyecatch?.url ?? RandomDummyImage()}
+											alt={blog.title}
+											fill
+											style={{ objectFit: "contain" }}
+										/>
+									</Box>
+									<CardHeader minH={"16"} alignItems={"start"}>
+										<Heading as={"h3"} size={"sm"} lineClamp={2}>
+											{blog.title}
+										</Heading>
+									</CardHeader>
+									<CardBody>
+										<HStack>
+											{blog.categories?.map((category) => (
+												<Tag key={category.id} size="sm">
+													{category.name}
+												</Tag>
+											))}
+										</HStack>
+										<Text>{dayjs(blog.publishedAt).format("YYYY/MM/DD")}</Text>
+									</CardBody>
+								</Card>
+							</Link>
+						))}
+					</SimpleGrid>
+				)}
 			</Section>
 		</VStack>
 	);

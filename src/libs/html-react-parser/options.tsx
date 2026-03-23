@@ -15,17 +15,16 @@ import {
 import hljs from "highlight.js";
 import Image from "next/image";
 import "highlight.js/styles/atom-one-dark.css";
-import parse from "html-react-parser";
-import {
+import parse, {
 	type DOMNode,
+	domToReact,
 	Element,
 	type HTMLReactParserOptions,
-	domToReact,
 } from "html-react-parser";
 
 type ReplaceElementProps = {
 	children?: React.ReactNode;
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: Parsed HTML attributes are dynamic and cannot be strongly typed here.
 	[key: string]: any;
 };
 

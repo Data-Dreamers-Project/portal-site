@@ -19,13 +19,13 @@ export const metadata: Metadata = {
 		siteName: "Data Dreamers Official Website",
 		images: [
 			{
-				url: "https://data-dreamers.vercel.app/images/challenge-lab-02.png",
+				url: "https://data-dreamers.vercel.app/images/challenge-lab-02.webp",
 			},
 		],
 	},
 };
 
-export default function Home() {
+export default function AboutPage() {
 	return (
 		<Flex direction={"column"} align={"center"} justify={"space-between"}>
 			<HeroImage {...imageData}>ABOUT</HeroImage>

@@ -1,17 +1,17 @@
 import {
 	Box,
-	Divider,
-	HStack,
 	Heading,
+	HStack,
+	Separator,
 	Tag,
 	Text,
 	VStack,
 } from "@yamada-ui/react";
 import dayjs from "dayjs";
 import type { Metadata } from "next";
-import React from "react";
 import { Article } from "~/components/features/Article";
 import Section from "~/components/layout/Section";
+import { BLOG_REVALIDATE } from "~/constants/revalidate";
 import { client } from "~/libs/microcms/client";
 import type { Content } from "~/types/blog";
 
@@ -53,7 +53,7 @@ export async function generateMetadata({
 	};
 }
 
-export const revalidate = 300;
+export const revalidate = BLOG_REVALIDATE;
 
 const BlogContentPage = async ({ params, searchParams }: Props) => {
 	const { id } = params;
@@ -85,7 +85,7 @@ const BlogContentPage = async ({ params, searchParams }: Props) => {
 						<Text>更新日: {dayjs(data.updatedAt).format("YYYY/MM/DD")}</Text>
 					</HStack>
 				</VStack>
-				<Divider />
+				<Separator />
 				<Article data={data} />
 			</Section>
 		</VStack>

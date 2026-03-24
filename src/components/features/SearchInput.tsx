@@ -21,13 +21,6 @@ export const SearchInput = () => {
 		}
 	};
 
-	// フォーカスが外れたときの処理
-	const handleBlur = () => {
-		const params = new URLSearchParams(Array.from(searchParams.entries()));
-		params.set("q", searchWord);
-		router.push(`?${params}`);
-	};
-
 	return (
 		<Input
 			name="q"
@@ -37,7 +30,6 @@ export const SearchInput = () => {
 				setSearchWord(e.target.value)
 			}
 			onKeyDown={handleKeyDown}
-			onBlur={handleBlur}
 		/>
 	);
 };

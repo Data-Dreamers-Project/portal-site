@@ -27,7 +27,6 @@ const imageData: ImageProps = {
 	src: "/images/challenge-lab-01.webp",
 	alt: "Data Dreamers",
 	priority: true,
-	placeholder: "blur",
 };
 
 export default function Home() {

@@ -18,7 +18,7 @@ import Link from "next/link";
 import { CategorySelector } from "~/components/features/CategorySelector";
 import { SearchInput } from "~/components/features/SearchInput";
 import Section from "~/components/layout/Section";
-import { RandomDummyImage } from "~/constants/dummyImages";
+import { DummyImageById } from "~/constants/dummyImages";
 import { BLOG_REVALIDATE } from "~/constants/revalidate";
 import { client } from "~/libs/microcms/client";
 import type { Blog, Category } from "~/types/blog";
@@ -104,7 +104,7 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 										bgGradient={"white"}
 									>
 										<Image
-											src={blog.eyecatch?.url ?? RandomDummyImage()}
+											src={blog.eyecatch?.url ?? DummyImageById(blog.id)}
 											alt={blog.title}
 											fill
 											style={{ objectFit: "contain" }}

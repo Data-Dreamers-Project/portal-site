@@ -8,6 +8,17 @@ export const DUMMY_IMAGES = [
 ];
 
 /**
+ * IDを元に決定論的にダミー画像URLを返す
+ */
+export const DummyImageById = (id: string): string => {
+	let hash = 0;
+	for (let i = 0; i < id.length; i++) {
+		hash = (hash * 31 + id.charCodeAt(i)) & 0xffffffff;
+	}
+	return DUMMY_IMAGES[Math.abs(hash) % DUMMY_IMAGES.length];
+};
+
+/**
  *
  * @returns Dummy Image URL
  */

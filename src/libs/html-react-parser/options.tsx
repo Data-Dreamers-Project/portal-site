@@ -148,14 +148,29 @@ const replaceElements: Record<
 			</Box>
 		</blockquote>
 	),
-	img: ({ children, src, alt, ...props }) => {
+	img: ({ src, alt, width, height }) => {
+		// width/height が取れる場合はそちらを優先
+		if (width && height) {
+			return (
+				<Image
+					src={src}
+					alt={alt ?? ""}
+					width={Number(width)}
+					height={Number(height)}
+					style={{ maxWidth: "100%", height: "auto" }}
+				/>
+			);
+		}
+		// サイズ不明時は fill で対応
 		return (
-			<Image
-				src={src}
-				alt={alt}
-				layout="intrinsic" // アスペクト比を自動計算
-				{...props}
-			/>
+			<Box position="relative" w="full" minH="300px">
+				<Image
+					src={src}
+					alt={alt ?? ""}
+					fill
+					style={{ objectFit: "contain" }}
+				/>
+			</Box>
 		);
 	},
 };

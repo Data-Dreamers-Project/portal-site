@@ -41,7 +41,7 @@ const SideMenu = () => {
 				<DrawerBody>
 					<Flex direction="column" gap={6} mt={6} w={"sm"}>
 						{SIDE_MENU_LINKS.map((item) => (
-							<Motion initial="initial" whileHover="animate" key={item.title}>
+							<Motion initial="initial" whileHover="animate" key={item.href}>
 								<Link href={item.href} onClick={onClose}>
 									<Text
 										fontSize={"lg"}

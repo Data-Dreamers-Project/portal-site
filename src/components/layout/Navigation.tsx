@@ -22,7 +22,7 @@ const Navigation = ({ direction }: Props) => {
 				direction={direction}
 			>
 				{NAV_LINKS.map((item) => (
-					<Motion initial="initial" whileHover="animate" key={item.title}>
+					<Motion initial="initial" whileHover="animate" key={item.href}>
 						<Link href={item.href}>
 							<Text
 								fontSize={"lg"}

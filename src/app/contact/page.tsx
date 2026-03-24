@@ -1,7 +1,6 @@
 import { IconMail } from "@tabler/icons-react";
 import { Flex, Heading, Text } from "@yamada-ui/react";
 import type { Metadata } from "next";
-import Image from "next/image";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
 
@@ -81,53 +80,28 @@ export default function Home() {
 					お問い合わせ
 				</Heading>
 				<Text>ご質問等がございましたら、お気軽にお問い合わせください。</Text>
-				<Flex justify={"center"} gapX={"6"}>
-					<Flex
-						_hover={{ bgGradient: "light" }}
-						direction={"column"}
-						align={"center"}
-						rounded={"md"}
-						border={"solid 1px"}
-						borderColor={"gray.500"}
-						p="2"
-						gap="2"
-						as="a"
-						href="https://peing.net/ja/b9dd01d45cfea7"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<Image
-							src="/images/peing.png"
-							alt="質問箱"
-							height={100}
-							width={100}
-						/>
-						<Text>質問箱</Text>
-					</Flex>
-
-					<Flex
-						_hover={{ bgGradient: "light" }}
-						direction={"column"}
-						align={"center"}
-						rounded={"md"}
-						border={"solid 1px"}
-						borderColor={"gray.500"}
-						p="2"
-						gap="2"
-						as="a"
-						href="mailto:yumekobo.ddp@gmail.com"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<IconMail
-							style={{
-								width: "100px",
-								height: "100px",
-								color: "var(--ui-colors-gray-800)",
-							}}
-						/>
-						<Text>G-Mail</Text>
-					</Flex>
+				<Flex
+					_hover={{ bgGradient: "light" }}
+					direction={"column"}
+					align={"center"}
+					rounded={"md"}
+					border={"solid 1px"}
+					borderColor={"gray.500"}
+					p="2"
+					gap="2"
+					as="a"
+					href="mailto:yumekobo.ddp@gmail.com"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<IconMail
+						style={{
+							width: "100px",
+							height: "100px",
+							color: "var(--ui-colors-gray-800)",
+						}}
+					/>
+					<Text>G-Mail</Text>
 				</Flex>
 			</Section>
 

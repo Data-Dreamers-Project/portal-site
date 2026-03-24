@@ -1,4 +1,4 @@
-export const DUMMYIMAGES = [
+export const DUMMY_IMAGES = [
 	"/images/business-cat-in-office.jpg",
 	"/images/business-pug-working-on-laptop.jpg",
 	"/images/hard-cover-books-on-blue-background.jpg",
@@ -12,6 +12,6 @@ export const DUMMYIMAGES = [
  * @returns Dummy Image URL
  */
 export const RandomDummyImage = (): string => {
-	const random = Math.floor(Math.random() * DUMMYIMAGES.length);
-	return DUMMYIMAGES[random];
+	const random = Math.floor(Math.random() * DUMMY_IMAGES.length);
+	return DUMMY_IMAGES[random];
 };

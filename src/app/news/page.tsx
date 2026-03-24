@@ -11,7 +11,7 @@ export default function NewsPage() {
 	return (
 		<Flex direction={"column"} align={"center"} justify={"space-between"}>
 			<HeroImage
-				src={"/images/writing-sationary.jpg"}
+				src={"/images/writing-stationery.jpg"}
 				alt={"Data Dreamers"}
 				priority
 			>

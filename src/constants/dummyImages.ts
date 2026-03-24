@@ -4,7 +4,7 @@ export const DUMMY_IMAGES = [
 	"/images/hard-cover-books-on-blue-background.jpg",
 	"/images/hands-typing.jpg",
 	"/images/taking-notes-and-working-on-laptop.jpg",
-	"/images/writing-sationary.jpg",
+	"/images/writing-stationery.jpg",
 ];
 
 /**

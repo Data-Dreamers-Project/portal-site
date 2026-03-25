@@ -168,6 +168,7 @@ const replaceElements: Record<
 					src={src}
 					alt={alt ?? ""}
 					fill
+					sizes="(max-width: 768px) 100vw, 800px"
 					style={{ objectFit: "contain" }}
 				/>
 			</Box>

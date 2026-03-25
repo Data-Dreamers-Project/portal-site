@@ -107,6 +107,7 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 											src={blog.eyecatch?.url ?? DummyImageById(blog.id)}
 											alt={blog.title}
 											fill
+											sizes="(max-width: 479px) 33vw, 100vw"
 											style={{ objectFit: "contain" }}
 										/>
 									</Box>

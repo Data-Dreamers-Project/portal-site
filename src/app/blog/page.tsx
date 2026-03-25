@@ -18,11 +18,12 @@ import Link from "next/link";
 import { CategorySelector } from "~/components/features/CategorySelector";
 import { SearchInput } from "~/components/features/SearchInput";
 import Section from "~/components/layout/Section";
-import { RandomDummyImage } from "~/constants/dummyImages";
+import { DummyImageById } from "~/constants/dummyImages";
+import { BLOG_REVALIDATE } from "~/constants/revalidate";
 import { client } from "~/libs/microcms/client";
 import type { Blog, Category } from "~/types/blog";
 
-export const revalidate = 300;
+export const revalidate = BLOG_REVALIDATE;
 
 interface BlogListPageProps {
 	searchParams: {
@@ -103,9 +104,10 @@ const BlogListPage = async ({ searchParams }: BlogListPageProps) => {
 										bgGradient={"white"}
 									>
 										<Image
-											src={blog.eyecatch?.url ?? RandomDummyImage()}
+											src={blog.eyecatch?.url ?? DummyImageById(blog.id)}
 											alt={blog.title}
 											fill
+											sizes="(max-width: 479px) 33vw, 100vw"
 											style={{ objectFit: "contain" }}
 										/>
 									</Box>

@@ -12,33 +12,7 @@ import {
 	useDisclosure,
 } from "@yamada-ui/react";
 import Link from "next/link";
-
-const List = [
-	{
-		title: "Home",
-		href: "/",
-	},
-	{
-		title: "About",
-		href: "/about",
-	},
-	{
-		title: "New Students",
-		href: "/for-new-dreamers",
-	},
-	{
-		title: "News",
-		href: "/news",
-	},
-	// {
-	// 	title: "Blog",
-	// 	href: "/blog",
-	// },
-	{
-		title: "Contact",
-		href: "/contact",
-	},
-];
+import { SIDE_MENU_LINKS } from "~/constants/navLinks";
 
 const SideMenu = () => {
 	const { open, onOpen, onClose } = useDisclosure();
@@ -66,8 +40,8 @@ const SideMenu = () => {
 				<DrawerHeader>Data Dreamers</DrawerHeader>
 				<DrawerBody>
 					<Flex direction="column" gap={6} mt={6} w={"sm"}>
-						{List.map((item) => (
-							<Motion initial="initial" whileHover="animate" key={item.title}>
+						{SIDE_MENU_LINKS.map((item) => (
+							<Motion initial="initial" whileHover="animate" key={item.href}>
 								<Link href={item.href} onClick={onClose}>
 									<Text
 										fontSize={"lg"}

@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 	title: "Data Dreamers",
 	openGraph: {
 		type: "website",
-		url: "https://data-dreamers.vercel.app/about",
-		title: "About | Data Dreamers",
+		url: "https://data-dreamers.vercel.app",
+		title: "Data Dreamers",
 		siteName: "Data Dreamers Official Website",
 		images: [
 			{

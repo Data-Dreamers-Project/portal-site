@@ -19,13 +19,13 @@ export const metadata: Metadata = {
 		siteName: "Data Dreamers Official Website",
 		images: [
 			{
-				url: "https://data-dreamers.vercel.app/images/challenge-lab-02.png",
+				url: "https://data-dreamers.vercel.app/images/challenge-lab-02.webp",
 			},
 		],
 	},
 };
 
-export default function Home() {
+export default function AboutPage() {
 	return (
 		<Flex direction={"column"} align={"center"} justify={"space-between"}>
 			<HeroImage {...imageData}>ABOUT</HeroImage>
@@ -37,7 +37,7 @@ export default function Home() {
 				<Text lineHeight={8}>
 					金沢工業大学の課外活動団体であり、夢考房に所属しています。
 					<br />
-					2023年5月 に発足した 新しいプロジェクトです。
+					2023年5月 に発足したプロジェクトです。
 					<br />
 					正式名称は{" "}
 					<strong>

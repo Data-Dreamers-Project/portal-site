@@ -1,25 +1,7 @@
 import { Flex, Motion, Text } from "@yamada-ui/react";
 import Link from "next/link";
+import { NAV_LINKS } from "~/constants/navLinks";
 import SideMenu from "./SideMenu";
-
-const List = [
-	{
-		title: "About",
-		href: "/about",
-	},
-	{
-		title: "New Students",
-		href: "/for-new-dreamers",
-	},
-	// {
-	// 	title: "Blog",
-	// 	href: "/blog",
-	// },
-	{
-		title: "Contact",
-		href: "/contact",
-	},
-];
 
 type Props = {
 	direction?: "row" | "column";
@@ -39,8 +21,8 @@ const Navigation = ({ direction }: Props) => {
 				display={{ base: "flex", md: "none" }}
 				direction={direction}
 			>
-				{List.map((item) => (
-					<Motion initial="initial" whileHover="animate" key={item.title}>
+				{NAV_LINKS.map((item) => (
+					<Motion initial="initial" whileHover="animate" key={item.href}>
 						<Link href={item.href}>
 							<Text
 								fontSize={"lg"}

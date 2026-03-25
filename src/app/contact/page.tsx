@@ -1,5 +1,4 @@
-import { IconMail } from "@tabler/icons-react";
-import { Flex, Heading, Text } from "@yamada-ui/react";
+import { Heading, Link, Text } from "@yamada-ui/react";
 import type { Metadata } from "next";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
@@ -30,7 +29,7 @@ const heroImageData = {
 
 export default function Home() {
 	return (
-		<Flex direction={"column"} align={"center"} justify={"space-between"}>
+		<div>
 			<HeroImage {...heroImageData}>Contact</HeroImage>
 			{/* <Section>
 				<Heading as={"h2"} size={"lg"}>
@@ -79,30 +78,13 @@ export default function Home() {
 				<Heading as={"h2"} size={"lg"} id="contact-us">
 					お問い合わせ
 				</Heading>
-				<Text>ご質問等がございましたら、お気軽にお問い合わせください。</Text>
-				<Flex
-					_hover={{ bgGradient: "light" }}
-					direction={"column"}
-					align={"center"}
-					rounded={"md"}
-					border={"solid 1px"}
-					borderColor={"gray.500"}
-					p="2"
-					gap="2"
-					as="a"
-					href="mailto:yumekobo.ddp@gmail.com"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<IconMail
-						style={{
-							width: "100px",
-							height: "100px",
-							color: "var(--ui-colors-gray-800)",
-						}}
-					/>
-					<Text>G-Mail</Text>
-				</Flex>
+				<Text>
+					ご質問等がございましたら、お気軽に{" "}
+					<Link href="mailto:yumekobo.ddp@gmail.com" color="blue.500">
+						yumekobo.ddp@gmail.com
+					</Link>{" "}
+					までお問い合わせください。
+				</Text>
 			</Section>
 
 			{/* <Section>
@@ -125,6 +107,6 @@ export default function Home() {
 					</a>
 				</Motion>
 			</Section> */}
-		</Flex>
+		</div>
 	);
 }

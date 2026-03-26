@@ -1,15 +1,7 @@
 # Overview
 
-Official website of Data Dreamers
+金沢工業大学 夢考房AI・データサイエンスプロジェクト Data Dreamers の公式ホームページです。
 
-## Getting Started
+## 開発者向けドキュメント
 
-First, run the development server:
-
-```bash
-pnpm i
-
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+環境構築などは[こちら](https://www.notion.so/1235ce60521880d8a653d935918d8c26)を確認してください

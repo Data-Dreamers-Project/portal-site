@@ -1,4 +1,5 @@
 import { Box, Flex, Grid, Heading, Text } from "@yamada-ui/react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import HeroImage from "~/components/layout/HeroImage";
 import Section from "~/components/layout/Section";
@@ -9,7 +10,22 @@ const imageData = {
 	priority: true,
 };
 
-export default function Home() {
+export const metadata: Metadata = {
+	title: "About",
+	openGraph: {
+		type: "website",
+		url: "https://data-dreamers.vercel.app/about",
+		title: "About | Data Dreamers",
+		siteName: "Data Dreamers Official Website",
+		images: [
+			{
+				url: "https://data-dreamers.vercel.app/images/challenge-lab-02.webp",
+			},
+		],
+	},
+};
+
+export default function AboutPage() {
 	return (
 		<Flex direction={"column"} align={"center"} justify={"space-between"}>
 			<HeroImage {...imageData}>ABOUT</HeroImage>
@@ -21,7 +37,7 @@ export default function Home() {
 				<Text lineHeight={8}>
 					金沢工業大学の課外活動団体であり、夢考房に所属しています。
 					<br />
-					2023年5月 に発足した 新しいプロジェクトです。
+					2023年5月 に発足したプロジェクトです。
 					<br />
 					正式名称は{" "}
 					<strong>
@@ -40,7 +56,7 @@ export default function Home() {
 					私たちの使命
 				</Heading>
 				<Text>
-					「社会課題を解決できるデータサイエンティストの育成」という目的を達成するために、2つのテーマを軸に活動を行っています。
+					「AI・データサイエンスの技術を活用し、社会課題を解決できる人材の育成」という目的を達成するために、2つのテーマを軸に活動を行っています。
 				</Text>
 				<Text>
 					1. データ分析を扱う技術向上に機会を得られる場の構築

@@ -1,0 +1,137 @@
+.wrapper {
+	width: 100%;
+}
+
+.timeline {
+	position: relative;
+	padding-top: 70px;
+}
+
+.pcArrow {
+	display: block;
+}
+
+.spArrow {
+	display: none;
+}
+
+.arrow {
+	position: absolute;
+	left: 0;
+	top: 120px;
+	transform: translateY(-50%);
+	width: calc(100% + 50px);
+	height: 40px;
+	z-index: 1;
+}
+
+.items {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.item {
+	flex: 0 0 auto;
+	position: relative;
+	top: 12px;
+}
+
+.box {
+	position: relative;
+	width: 130px;
+	height: 73px;
+	background: #fff;
+	border: 2px solid #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.boxLine {
+	font-size: 13px;
+	font-weight: 600;
+	white-space: pre-line;
+	text-align: center;
+}
+
+.box::before {
+	content: "";
+	position: absolute;
+	left: -2px;
+	top: -60px;
+	width: 2px;
+	height: 60px;
+	background: #333;
+}
+
+.box::after {
+	content: attr(data-date) "\A" attr(data-place);
+	position: absolute;
+	left: 6px;
+	top: -65px;
+	font-size: 15px;
+	font-weight: 600;
+	white-space: pre;
+}
+
+@media (max-width: 768px) {
+	.wrapper {
+		padding-left: 100px;
+	}
+
+	.pcArrow {
+		display: none;
+	}
+
+	.spArrow {
+		display: block;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 40px;
+		height: 100%;
+	}
+
+	.arrow {
+		left: 50%;
+		top: 0px;
+		transform: translateX(-50%);
+		width: 20px;
+	}
+
+	.items {
+		flex-direction: column;
+		gap: 10px;
+		align-items: center;
+		padding-top: 10px;
+	}
+
+	.item {
+		top: -60px;
+	}
+
+	.box {
+		width: 160px;
+	}
+
+	.box::before {
+		left: -150px;
+		top: auto;
+		bottom: -2px;
+		width: 150px;
+		height: 2px;
+	}
+
+	.box::after {
+		left: -150px;
+		bottom: 0;
+		top: auto;
+		width: 140px;
+		font-size: 14px;
+		white-space: pre;
+		text-align: right;
+	}
+}

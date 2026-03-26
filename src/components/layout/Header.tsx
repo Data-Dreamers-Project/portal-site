@@ -1,7 +1,6 @@
 import { Flex, Heading } from "@yamada-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import Navigation from "./Navigation";
 
 const Header = () => {
@@ -17,7 +16,13 @@ const Header = () => {
 			bgGradient={"blue"}
 		>
 			<Flex as={Link} direction="row" href={"/"} alignItems={"center"}>
-				<Image src="/images/icon-removebg.png" alt="" width={50} height={50} />
+				<Image
+					src="/images/icon-removebg.png"
+					alt=""
+					aria-hidden={true}
+					width={50}
+					height={50}
+				/>
 				<Heading as={"h1"} fontWeight={"bold"} color={"white"} fontSize={"2xl"}>
 					Data Dreamers
 				</Heading>

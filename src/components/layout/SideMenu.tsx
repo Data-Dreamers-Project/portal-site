@@ -2,61 +2,36 @@
 
 import { IconMenu2 } from "@tabler/icons-react";
 import {
-	Button,
 	Drawer,
 	DrawerBody,
 	DrawerHeader,
 	Flex,
+	IconButton,
 	Motion,
 	Text,
 	useDisclosure,
 } from "@yamada-ui/react";
 import Link from "next/link";
-import React from "react";
-
-const List = [
-	{
-		title: "Home",
-		href: "/",
-	},
-	{
-		title: "About",
-		href: "/about",
-	},
-	{
-		title: "New Students",
-		href: "/for-new-dreamers",
-	},
-	{
-		title: "News",
-		href: "/news",
-	},
-	{
-		title: "Contact",
-		href: "/contact",
-	},
-];
+import { SIDE_MENU_LINKS } from "~/constants/navLinks";
 
 const SideMenu = () => {
-	const { isOpen, onOpen, onClose } = useDisclosure();
+	const { open, onOpen, onClose } = useDisclosure();
 	const underlineAnimation = {
 		initial: { width: "0%" },
 		animate: { width: "100%" },
 	};
 	return (
 		<>
-			<Button
+			<IconButton
+				icon={<IconMenu2 size={24} />}
+				variant={"outline"}
 				onClick={onOpen}
-				bg={"transparent"}
-				border={"revert"}
 				color={"white"}
-				_hover={{ bg: "rgba(256, 256, 256, 0.1)" }}
-			>
-				<IconMenu2 size={24} />
-			</Button>
+				_hover={{ bg: "blackAlpha.500" }}
+			/>
 
 			<Drawer
-				isOpen={isOpen}
+				open={open}
 				onClose={onClose}
 				size={"sm"}
 				bgGradient={"blue"}
@@ -65,8 +40,8 @@ const SideMenu = () => {
 				<DrawerHeader>Data Dreamers</DrawerHeader>
 				<DrawerBody>
 					<Flex direction="column" gap={6} mt={6} w={"sm"}>
-						{List.map((item) => (
-							<Motion initial="initial" whileHover="animate" key={item.title}>
+						{SIDE_MENU_LINKS.map((item) => (
+							<Motion initial="initial" whileHover="animate" key={item.href}>
 								<Link href={item.href} onClick={onClose}>
 									<Text
 										fontSize={"lg"}

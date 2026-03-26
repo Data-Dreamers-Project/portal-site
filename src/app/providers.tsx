@@ -1,12 +1,12 @@
 import { Analytics } from "@vercel/analytics/react";
 import { UIProvider } from "@yamada-ui/react";
-import React from "react";
+import type { ReactNode } from "react";
 import { config, theme } from "~/theme";
 
 const Providers = ({
 	children,
 }: Readonly<{
-	children: React.ReactNode;
+	children: ReactNode;
 }>) => {
 	return (
 		<>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Crawl-delay: 600
+
+Sitemap: https://data-dreamers.vercel.app/sitemap.xml

@@ -1,6 +1,6 @@
 "use client";
 
-import { UsageTheme, extendConfig, extendTheme } from "@yamada-ui/react";
+import { extendConfig, extendTheme, type UsageTheme } from "@yamada-ui/react";
 // import styles from './styles'
 // import components from './components'
 import tokens from "./tokens";

@@ -1,18 +1,17 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
+	"$schema": "https://biomejs.dev/schemas/2.4.8/schema.json",
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true,
 			"correctness": {
 				"useHookAtTopLevel": "error",
-				"noUnusedVariables": "error"
+				"noUnusedVariables": "error",
+				"noUnusedImports": "error"
 			},
 			"suspicious": {
-				"noConsoleLog": "warn"
+				"noConsole": { "level": "warn", "options": { "allow": ["log"] } }
 			}
 		}
 	},

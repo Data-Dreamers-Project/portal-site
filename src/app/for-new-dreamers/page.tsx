@@ -94,7 +94,7 @@ export default function Home() {
 						参加仮登録
 						<br />
 						<Link
-							href="https://forms.gle/tfZ23vKLtPX1ZWf58"
+							href="https://forms.gle/1FjWcv7Zh9aH5AYH7"
 							target="_blank"
 							rel="noreferrer"
 						>

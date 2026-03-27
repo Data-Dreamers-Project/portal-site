@@ -1,11 +1,10 @@
 import { IconChevronRight } from "@tabler/icons-react";
 import { Flex, Heading, Separator, Text } from "@yamada-ui/react";
 import type { Metadata } from "next";
-import type { ImageProps } from "next/image";
 import Link from "next/link";
 import { GhostButton } from "~/components/atoms/Button";
 import DocsWell from "~/components/features/DocsWell";
-import HeroImage from "~/components/layout/HeroImage";
+import HeroSection from "~/components/layout/HeroSection";
 import Section from "~/components/layout/Section";
 
 export const metadata: Metadata = {
@@ -23,20 +22,10 @@ export const metadata: Metadata = {
 	},
 };
 
-const imageData: ImageProps = {
-	src: "/images/challenge-lab-01.webp",
-	alt: "Data Dreamers",
-	priority: true,
-};
-
 export default function Home() {
 	return (
 		<Flex direction={"column"} align={"center"} justify={"space-between"}>
-			<HeroImage {...imageData}>
-				昨日より良い明日を
-				<br />
-				&emsp;データサイエンスで。
-			</HeroImage>
+			<HeroSection />
 			<Section>
 				<Flex direction={"column"} align={"center"} gap={"2rem"}>
 					<div>

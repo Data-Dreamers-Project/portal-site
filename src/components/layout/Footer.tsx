@@ -62,8 +62,8 @@ const sns = [
 	},
 	{
 		Icon: <IconMail />,
-		href: "mailto:yumekobo.ddp@gmail.com",
-		label: "Email",
+		href: "https://forms.gle/mkyGNmE4JDkCaBQs8",
+		label: "お問い合わせ",
 	},
 ];
 

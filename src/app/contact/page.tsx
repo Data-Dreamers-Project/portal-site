@@ -80,10 +80,14 @@ export default function Home() {
 				</Heading>
 				<Text>
 					ご質問等がございましたら、お気軽に{" "}
-					<Link href="mailto:yumekobo.ddp@gmail.com" color="blue.500">
-						yumekobo.ddp@gmail.com
+					<Link
+						href="https://forms.gle/mkyGNmE4JDkCaBQs8"
+						color="blue.500"
+						isExternal
+					>
+						お問い合わせフォーム
 					</Link>{" "}
-					までお問い合わせください。
+					からお問い合わせください。
 				</Text>
 			</Section>
 

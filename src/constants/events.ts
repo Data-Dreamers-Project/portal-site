@@ -8,7 +8,7 @@ export const EVENTS = [
 	},
 	{
 		id: "event-2",
-		date: "4月6日\n時間不明",
+		date: "4月6日\n9:00~16:50",
 		title: "課外活動団体\n紹介イベント",
 		location: "6号館多目的ホール",
 	},
@@ -28,6 +28,6 @@ export const EVENTS = [
 		id: "event-5",
 		date: "4月27日\n17:00~19:00",
 		title: "Data Dreamers \n仮加入説明会",
-		location: "23号館218室",
+		location: "23号館330室",
 	},
 ];

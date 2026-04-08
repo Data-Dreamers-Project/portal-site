@@ -4,7 +4,8 @@
 
 .timeline {
 	position: relative;
-	padding-top: 70px;
+	min-width: fit-content;
+	padding: 0 40px;
 }
 
 .pcArrow {
@@ -18,9 +19,8 @@
 .arrow {
 	position: absolute;
 	left: 0;
-	top: 120px;
-	transform: translateY(-50%);
-	width: calc(100% + 50px);
+	bottom: 16px;
+	width: calc(100% + 20px);
 	height: 40px;
 	z-index: 1;
 }
@@ -30,20 +30,46 @@
 	z-index: 2;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	gap: 20px;
+	align-items: flex-end;
+	gap: 24px;
 }
 
 .item {
 	flex: 0 0 auto;
-	position: relative;
-	top: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 140px;
+}
+
+.itemHeader {
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.5;
+	white-space: pre-line;
+	padding-left: 10px;
+	border-left: 3px solid #333;
+}
+
+.itemLocation {
+	display: block;
+	font-size: 12px;
+	font-weight: 500;
+	color: #555;
+	margin-top: 2px;
+}
+
+.itemStem {
+	width: 2px;
+	height: 12px;
+	background: #333;
+	margin-left: 0;
 }
 
 .box {
-	position: relative;
-	width: 130px;
-	height: 73px;
+	width: 140px;
+	min-height: 70px;
+	padding: 8px 4px;
 	background: #fff;
 	border: 2px solid #333;
 	display: flex;
@@ -56,31 +82,12 @@
 	font-weight: 600;
 	white-space: pre-line;
 	text-align: center;
-}
-
-.box::before {
-	content: "";
-	position: absolute;
-	left: -2px;
-	top: -60px;
-	width: 2px;
-	height: 60px;
-	background: #333;
-}
-
-.box::after {
-	content: attr(data-date) "\A" attr(data-place);
-	position: absolute;
-	left: 6px;
-	top: -65px;
-	font-size: 15px;
-	font-weight: 600;
-	white-space: pre;
+	line-height: 1.5;
 }
 
 @media (max-width: 768px) {
-	.wrapper {
-		padding-left: 100px;
+	.timeline {
+		padding: 0 16px 0 16px;
 	}
 
 	.pcArrow {
@@ -89,49 +96,44 @@
 
 	.spArrow {
 		display: block;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 40px;
-		height: 100%;
 	}
 
 	.arrow {
-		left: 50%;
-		top: 0px;
-		transform: translateX(-50%);
+		left: 6px;
+		top: 0;
+		bottom: auto;
+		transform: none;
 		width: 20px;
+		height: calc(100% + 30px);
 	}
 
 	.items {
 		flex-direction: column;
-		gap: 10px;
-		align-items: center;
-		padding-top: 10px;
+		gap: 16px;
+		align-items: stretch;
+		padding: 10px 0 30px;
 	}
 
 	.item {
-		top: -60px;
+		width: auto;
+		align-items: stretch;
+	}
+
+	.itemHeader {
+		font-size: 13px;
+		text-align: left;
+		padding-left: 10px;
+		border-left: none;
+		border-bottom: none;
+		padding-bottom: 0;
+		width: auto;
+	}
+
+	.itemLocation {
+		font-size: 11px;
 	}
 
 	.box {
-		width: 160px;
-	}
-
-	.box::before {
-		left: -150px;
-		top: auto;
-		bottom: -2px;
-		width: 150px;
-		height: 2px;
-	}
-
-	.box::after {
-		left: -150px;
-		bottom: 0;
-		top: auto;
-		width: 140px;
-		font-size: 14px;
-		white-space: pre;
-		text-align: right;
+		width: auto;
 	}
 }

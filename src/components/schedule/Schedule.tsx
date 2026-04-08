@@ -35,11 +35,11 @@ export const Schedule: FC = () => {
 				<div className="items">
 					{EVENTS.map((event) => (
 						<div className="item" key={event.id}>
-							<div
-								className="box"
-								data-date={event.date}
-								data-place={event.location}
-							>
+							<div className="itemHeader">
+								{event.date}
+								<span className="itemLocation">{event.location}</span>
+							</div>
+							<div className="box">
 								<div className="boxLine">{event.title}</div>
 							</div>
 						</div>

@@ -3,7 +3,7 @@ import { Flex, Heading, Separator, Text } from "@yamada-ui/react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GhostButton } from "~/components/atoms/Button";
-import DocsWell from "~/components/features/DocsWell";
+import SlideEmbed from "~/components/features/SlideEmbed";
 import HeroSection from "~/components/layout/HeroSection";
 import Section from "~/components/layout/Section";
 
@@ -44,7 +44,7 @@ export default function Home() {
 					<Text textAlign={"center"}>
 						データ分析に興味のある人同士が交流し、切磋琢磨する場を提供します。
 					</Text>
-					<DocsWell />
+					<SlideEmbed />
 				</Flex>
 			</Section>
 			<Section parent={{ bgColor: "gray.50" }}>
